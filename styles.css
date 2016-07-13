@@ -1,6 +1,7 @@
 body {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   line-height: 1.4;
+  margin: 0;
 }
 
 main {
@@ -17,7 +18,7 @@ main {
 }
 
 .image-container {
-  position: absolute;
+  position: relative;
 }
 
 button {
@@ -88,4 +89,46 @@ nav {
 .sub-nav a {
   display: block;
   text-align: right;
+}
+
+@media screen and (max-width: 990px) {
+  * {
+    position: relative !important;
+  }
+  .container {
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  main {
+    overflow: visible;
+  }
+
+  nav {
+    left: 0;
+    top: 0;
+    margin-right: 0;
+    margin-bottom: 50px;
+    height: auto;
+  }
+  .main-nav a,
+  .sub-nav a {
+    text-align: left;
+  }
+
+  .sub-nav {
+    top: 20px;
+  }
+
+
+  img,
+  main,
+  .image-container,
+  .container {
+    width: 100% !important;
+    min-height: auto;
+  }
+
+  .image-nav {
+    display: none;
+  }
 }
