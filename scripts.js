@@ -2,16 +2,21 @@
   document.addEventListener('DOMContentLoaded', init);
 
   var current = 0,
-  imageContainer, images, total;
+  imageContainer, images, imageNav, total;
 
   function init() {
-    var left = document.querySelector('.btn-left');
-    var right = document.querySelector('.btn-right');
+    var left         = document.querySelector('.btn-left');
+    var right        = document.querySelector('.btn-right');
+    images           = document.querySelectorAll('main img');
+    imageNav         = document.querySelector('.image-nav');
+    imageContainer   = document.querySelector('.image-container');
 
-    images = document.querySelectorAll('main img');
     total = images.length;
-    imageContainer = document.querySelector('.image-container');
     imageContainer.style.width = (total * images[0].width) + 'px';
+
+    if (total > 1) {
+      imageNav.classList.remove('hidden');
+    }
 
     left.addEventListener('click', onLeftClick.bind(this));
     right.addEventListener('click', onRightClick.bind(this));
