@@ -12,7 +12,7 @@
     imageContainer   = document.querySelector('.image-container');
 
     total = images.length;
-    imageContainer.style.width = (total * images[0].width) + 'px';
+    imageContainer.style.width = (total * 750) + 'px';
 
     if (total > 1) {
       imageNav.classList.remove('hidden');
